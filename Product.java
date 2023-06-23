@@ -1,15 +1,24 @@
+import java.util.Random;
+
 public class Product {
   private String name;
   private double price;
   private Category category;
-  private DiscountSize discountSize;
-
+  private static DiscountSize discountSize;
   public Product(String name, double price, Category category) {
     setName(name);
     setPrice(price);
     setCategory(category);
     this.discountSize = DiscountSize.NO_DISCOUNT;
   }
+  public static void assignRandomDiscount() {
+    DiscountSize[] discounts = DiscountSize.values();
+    Random random = new Random();
+    int index = random.nextInt(discounts.length);
+    DiscountSize randomDiscount = discounts[index];
+    setDiscountSize(randomDiscount);
+  }
+
 
   // Геттеры и сеттеры
 
@@ -50,12 +59,13 @@ public class Product {
     return discountSize;
   }
 
-  public void setDiscountSize(DiscountSize discountSize) {
+  public static void setDiscountSize(DiscountSize discountSize) {
     if (discountSize == null) {
       throw new IllegalArgumentException("Discount size cannot be null.");
     }
-    this.discountSize = discountSize;
+    Product.discountSize = discountSize;
   }
+
 
 
   @Override

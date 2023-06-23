@@ -14,4 +14,5 @@ public enum DiscountSize {
   public double getValue() {
     return value;
   }
+
 }
