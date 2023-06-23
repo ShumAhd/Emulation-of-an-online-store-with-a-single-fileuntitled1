@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
+import javax.print.attribute.Attribute;
 
 public class Main {
   private static final int MAX_QUANTITY = 100;
@@ -44,11 +45,11 @@ public class Main {
 
   public static List<Product> createProducts() {
     List<Product> products = new ArrayList<>();
-    products.add(new Product("Товар 1", 100.0, Category.STANDARD));
+    products.add(new Product("Товар 1", 100.0, Category.NORMAL));
     Product.assignRandomDiscount();
     products.add(new Product("Товар 2", 200.0, Category.PREMIUM));
     Product.assignRandomDiscount();
-    products.add(new Product("Товар 3", 300.0, Category.STANDARD));
+    products.add(new Product("Товар 3", 300.0, Category.NORMAL));
     Product.assignRandomDiscount();
     products.add(new Product("Товар 4", 400.0, Category.PREMIUM));
     Product.assignRandomDiscount();
