@@ -1,7 +1,15 @@
+/**
+ * Этот класс представляет собой категорию продукта
+ */
 public class Category {
+
+  /**
+   * Константа для обозначения нормальной категории.
+   */
   public static final String NORMAL = "Normal";
+  /**
+   * Константа для обозначения премиум категории.
+   */
   public static final String PREMIUM = "Premium";
-  public static final String STANDARD = "Standart" ;
-  // Другие константы и код класса
 }
 

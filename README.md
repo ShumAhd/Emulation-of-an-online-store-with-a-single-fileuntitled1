@@ -26,7 +26,7 @@
 
 
 ** Товарам добавить категорию. Задать категории Стандарт и Премиум. Если на товар категории Премиум назначилась скидка более 15%, выбросить исключение TooMuchSaleException(msg), сообщение с ошибкой вывести в консоль, цену товара не менять.
-```
+```java
 Пример из консоли
 
 Добавлен заказ: 
@@ -90,3 +90,90 @@
 Количество совершенных покупок: 4
 ```
 
+# Краткое описание кода
+```java
+/**
+ * Класс Customer представляет собой покупателя в интернет-магазине.
+ * Он содержит поля для ФИО, возраста, телефона и пола покупателя.
+ */
+public class Customer {
+  // ...
+}
+
+/**
+ * Класс Product представляет собой товар в интернет-магазине.
+ * Он содержит поля для названия, цены и категории товара.
+ */
+public class Product {
+  // ...
+}
+
+/**
+ * Класс Order представляет собой заказ в интернет-магазине.
+ * Он содержит поля для покупателя, товара и количества заказанного товара.
+ */
+public class Order {
+  // ...
+}
+
+/**
+ * Главный класс программы.
+ */
+public class Main {
+  /**
+   * Главный метод программы. Создает клиентов и продукты, совершает случайные покупки и выводит результаты..
+   */
+  public static void main(String[] args) {
+    // ...
+  }
+
+  /**
+   * Создает список клиентов.
+   * @return Список клиентов.
+   */
+  public static List<Customer> createCustomers() {
+    // ...
+  }
+
+  /**
+   * Создает список продуктов и присваивает им случайные скидки.
+   * @return Список продуктов.
+   */
+  public static List<Product> createProducts() {
+    // ...
+  }
+
+  /**
+   * Добавляет заказ в список заказов. Если заказ для этого клиента уже существует, выводится сообщение об этом.
+   * @param orders Список заказов.
+   * @param order Заказ, который нужно добавить.
+   */
+  public static void addOrder(List<Order> orders, Order order) {
+    // ...
+  }
+
+  /**
+   * Создает случайный заказ.
+   * @param customers Список клиентов.
+   * @param products Список продуктов.
+   * @return Случайный заказ.
+   */
+  public static Order makeRandomPurchase(List<Customer> customers, List<Product> products)
+      throws CustomerException, ProductException, AmountException {
+    // ...
+  }
+
+  /**
+   * Создает заказ с указанными параметрами.
+   * @param customer Клиент, который сделал заказ.
+   * @param product Продукт, который был заказан.
+   * @param quantity Количество заказанного продукта.
+   * @return Заказ с указанными параметрами.
+   */
+  public static Order makePurchase(Customer customer, Product product, int quantity)
+      throws CustomerException, ProductException, AmountException {
+    // ...
+  }
+}
+
+```
