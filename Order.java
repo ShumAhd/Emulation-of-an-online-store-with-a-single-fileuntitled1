@@ -96,8 +96,8 @@ public class Order {
    * @param quantity Количество заказанного продукта.
    */
   public void setQuantity(int quantity) {
-    if (quantity <= 0) {
-      throw new IllegalArgumentException("Quantity must be greater than zero.");
+    if (quantity <= 0 || quantity > 100 ) {
+      throw new IllegalArgumentException("Quantity must be greater than zero and less than or equal to 100");
     }
     this.quantity = quantity;
     calculateTotalPrice();

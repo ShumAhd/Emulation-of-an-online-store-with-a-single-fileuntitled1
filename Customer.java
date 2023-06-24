@@ -99,8 +99,8 @@ public class Customer {
    * @param age Возраст клиента.
    */
   public void setAge(int age) {
-    if (age < 0) {
-      throw new IllegalArgumentException("Age cannot be negative.");
+    if (age < 0 || age > 120) {
+      throw new IllegalArgumentException("Age must be between 0 and 150.");
     }
     this.age = age;
   }
@@ -120,8 +120,8 @@ public class Customer {
    * @param phone Номер телефона клиента.
    */
   public void setPhone(String phone) {
-    if (phone == null || phone.isEmpty()) {
-      throw new IllegalArgumentException("Phone number cannot be null or empty.");
+    if (phone == null || phone.isEmpty() || !phone.matches("\\d+")) {
+      throw new IllegalArgumentException("Phone number cannot be null or empty or contain non-digit characters");
     }
     this.phone = phone;
   }
